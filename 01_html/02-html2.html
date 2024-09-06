@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      </style>
+</head>
+<body>
+    <!-- 2일차 -->
+    <img src="../킹댕이.jpg" alt="강아진데용" />
+    <img src="/킹댕이.jpg" alt="dog.jpg" />
+    <img
+      src="https://d2afncas1tel3t.cloudfront.net/wp-content/uploads/211001_%EB%B9%85%EC%95%84%EC%9D%B4%EC%8A%A4%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8-1280.jpg"
+      alt="test"
+    />
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.naver.com" target="_blank">네이버 blank</a>
+    <a href="https://www.naver.com" target="_self">네이버 self</a>
+  </body>
+  <form>
+    <input type="button" value="버튼" />
+    <input type="text" placeholder="text" />
+    <input type="password" placeholder="pw" />
+    <!-- checkbox 타입의 경우 name이 같은 것들끼리 그룹화된다 -> value값을 줘서 그것 중 선택된다. 
+    checked 옵션을 통해 default로 선택이 되어있는 것으로 표시해준다.
+        +) 여러개 선택이 가능하다!-->
+    <input type="checkbox" name="fruits" vlaue="apple" checked /> 사과
+    <input type="checkbox" name="fruits" vlaue="banana" /> 바나나
+    <!-- radio 버튼의 경우 여러 옵션중 하나만 선택이 가능하다! 
+    checkbox와 동일하게 name 속성을 줘서 그룹화한다.-->
+    <input type="radio" name="gender" value="male" checked /> 남자
+    <input type="radio" name="gender" value="female" /> 여자
+    <!-- 날짜만 -->
+    <input type="date" />
+    <!-- 시간까지 -->
+    <input type="datetime-local" />
+    <!-- select -->
+    <select>
+      <!-- optgroup에 label값을 주면 소제목 느낌으로 보여줄 수 있다. 또한 option에 selected값을 주면 default로 설정 가능하다. -->
+      <optgroup label="커피">
+        <option value="americano" selected>아메리카노</option>
+        <option value="latte">카페라떼</option>
+        <option value="espresso">에스프레소</option>
+      </optgroup>
+      <optgroup label="티">
+        <option value="jasmin">자스민</option>
+        <option value="djfrmfpdl">얼그레이</option>
+      </optgroup>
+    </select>
+  </form>
+  <hr>
+  <!-- table -->
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>이름</th>
+      <th>나이</th>
+      <th>전화번호</th>
+    </tr>
+    <tr>
+      <td>성재</td>
+      <td>24</td>
+      <td>010-9355-8459</td>
+    </tr>
+    <tr>
+      <td rowspan="2">홍길동</td>
+      <td colspan="2">100</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>0102-2323-32</td>
+    </tr>
+    <!-- semantic -->
+    <header>
+      <nav>
+        <ul>
+          <li>Menu</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>경제</h2>
+        <article></article>
+      </section>
+
+      <section>
+        <h2>사회</h2>
+        <article></article>
+      </section>
+      <section>
+        <h2>?</h2>
+        <article></article>
+      </section>
+    </main>
+    <footer></footer>
+  </table>
+</body>
+</html>

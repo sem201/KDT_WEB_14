@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>설문조사 폼 만들기!</title>
+  </head>
+  <body>
+    <h3>설문조사</h3>
+    이름
+    <input type="text" />
+    <br />
+    이메일
+    <input type="text" placeholder="codingon@example.com" />
+    <h3>나이</h3>
+    <input type="radio" name="age" value="10" checked />10대
+    <input type="radio" name="age" value="20" />20대
+    <input type="radio" name="age" value="30" />30대
+    <input type="radio" name="age" value="40" />40대
+    <input type="radio" name="age" value="50" />50대
+    <input type="radio" name="age" value="60over" />60대이상
+    <h3>원하는 강의 (복수 응답가능합니다.)</h3>
+    <input type="checkbox" name="lecture" value="html" checked />html
+    <input type="checkbox" name="lecture" value="js" />javascript
+    <input type="checkbox" name="lecture" value="css" />css
+    <br />
+    <textarea
+      cols="100"
+      rows="10"
+      placeholder="하고 싶은 말을 써주세요 :)"
+    ></textarea>
+    <input type="button" value="제출" />
+    <table border="1" cellspacing="0" cellpadding="10">
+      <tr>
+        <td colspan="3">1</td>
+        <td rowspan="2">2</td>
+      </tr>
+      <tr>
+        <td rowspan="2">3</td>
+        <td colspan="2">center</td>
+      </tr>
+      <tr>
+        <td colspan="3">4</td>
+      </tr>
+    </table>
+  </body>
+</html>
