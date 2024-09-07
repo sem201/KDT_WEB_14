@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css1</title>
+    <link rel="stylesheet" href="02-css_01.css" />
+  </head>
+  <style>
+    p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 200px;
+      text-align: center;
+      font-weight: 900;
+      background-color: rgb(213, 182, 190);
+    }
+    div {
+      background-color: yellow;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <div style="background-color: lightcoral">
+      <!--인라인 방식으로 처리해준게 더 우선순위 높음-->
+      <p>1</p>
+    </div>
+    <div>
+      <p>2</p>
+    </div>
+    <div>
+      <p>3</p>
+    </div>
+  </body>
+</html>

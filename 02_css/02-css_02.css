@@ -1,0 +1,50 @@
+/* --- 기본(단일) 선택자 */
+/* 태그 선택자 : 태그 이름 사용*/
+li {
+  color: red;
+}
+/* class 선택자 :.class 이름*/
+.orange {
+  color: orange;
+}
+/* id 선택자 : #id 이름 */
+#blue {
+  color: blue;
+}
+
+/* ---복합 선택자 --- */
+/* 일치 선택자: 선택자선택자 */
+span.orange {
+  background-color: yellow;
+}
+/* 자식 선택자:선택자 > 선택자 */
+ul > .orange {
+  background-color: red;
+}
+/* 하위 선택자: 선택자 선택자 */
+div .orange {
+  text-decoration: line-through;
+}
+/* 인접형제 : 선택자 + 선택자 */
+.orange + li {
+  color: gold;
+}
+/* 일반 형제 선택자 : 선택자 ~ 선택자 */
+.orange ~ li {
+  background-color: aqua;
+}
+
+/* 가상클래스 */
+/* hover: 마우스를 올리고 있는 동안 */
+a:hover {
+  color: aliceblue;
+  background-color: black;
+}
+/* active:클릭하고 있는동안 */
+a:active {
+  background-color: red;
+}
+/* focus: 포커스가 있는 동안 */
+input:focus {
+  background-color: grey;
+}
