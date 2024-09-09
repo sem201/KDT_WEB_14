@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Tenada";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+.google {
+  font-family: "Playwrite CU", cursive;
+}
+.nunun {
+  font-family: "Tenada";
+}
+
+#box {
+  background-color: orange;
+  width: auto;
+  height: 200px;
+}
+
+#box div {
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+}
+
+#box div:nth-child(1) {
+  background-color: aliceblue;
+}
+#box div:nth-child(2) {
+  background-color: green;
+  margin: 0 30px;
+}
+#box div:nth-child(3) {
+  background-color: red;
+}

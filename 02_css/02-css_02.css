@@ -48,3 +48,47 @@ a:active {
 input:focus {
   background-color: grey;
 }
+
+/* firstchild : ABC가 형제 요소 중 (첫째라면!!!!!!) 선택  */
+.fruits span:first-child {
+  color: red;
+}
+
+.fruits div:first-child {
+  color: red;
+}
+
+/* last-child: ABC가 형제 요소 중 막내라면 선택 */
+.fruits h3:last-child {
+  color: green;
+}
+
+.fruits *:nth-child(2n) {
+  background-color: aqua;
+}
+.fruits *:nth-child(2n + 1) {
+  background-color: yellow;
+}
+
+/* not: ABC가 아닌 나머지 요소 선택 */
+.fruits *:not(span) {
+  text-decoration: line-through;
+}
+
+/* 가상 요소 선택자 */
+/* before: 요소 앞에 */
+.fruits::before {
+  content: "과일 목록 시작!";
+}
+.fruits::after {
+  content: "과일 목록 끝!";
+}
+
+/* 속성 선택자 */
+[readonly] {
+  background-color: lightgrey;
+}
+
+input:not([placeholder]) {
+  background-color: blue;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="02-css_03.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap"
+      rel="stylesheet"
+    />
+    <title>css3</title>
+  </head>
+  <body style="margin: 0">
+    <div class="box">
+      <p>text</p>
+    </div>
+    <!-- font family -->
+    <p class="google">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione minus
+      tenetur amet consectetur earum, unde facilis voluptatibus deserunt hic nam
+      laboriosam repudiandae ipsam quam voluptatem nobis autem eligendi incidunt
+      quas.
+    </p>
+    <p class="noon">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fuga,
+      repellendus cupiditate incidunt labore est ipsa vero? Rerum eligendi
+      beatae dolor, numquam omnis provident aliquid similique commodi
+      praesentium sint perferendis?
+    </p>
+    <!-- inline & block -->
+    <span style="background-color: yellow">Hello</span>
+    <span style="background-color: yellow">World</span>
+
+    <div style="background-color: orange; width: 100px; display: inline-block">
+      Hello
+    </div>
+    <div style="background-color: red; width: 100px">World</div>
+    <!-- margin -->
+    <div
+      style="width: 200px; height: 200px; background-color: blue; margin: auto"
+    ></div>
+
+    <!-- width&height -->
+    <!-- vw,vh로 브라우저 기준으로 반응형 적용 -->
+    <div style="background-color: aqua; width: 100vw; height: 100px"></div>
+    <!-- max-width,min-height -->
+    <div
+      style="
+        background-color: orange;
+        width: calc(30%-100px);
+        max-width: 400px;
+        height: 30vh;
+        min-width: 200px;
+      "
+    ></div>
+    <div style="height: 100px; line-height: 100px">안녕하세요</div>
+  </body>
+</html>

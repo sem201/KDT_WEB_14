@@ -7,13 +7,13 @@
   </head>
   <style>
     /* 1번 */
-    h3 {
+    /* h3 {
       color: white;
       background-color: black;
       width: fit-content;
-    }
+    } */
     /* 2번 */
-    * {
+    /* * {
       color: white;
     }
     html {
@@ -27,9 +27,9 @@
     }
     .second {
       background-color: green;
-    }
+    } */
     /* 3번 */
-    p.lion {
+    /* p.lion {
       background-color: red;
     }
     ul > .lion {
@@ -49,9 +49,9 @@
     }
     ul > li.lion ~ li {
       background-color: orange;
-    }
+    } */
     /* 4번 */
-    h1:hover {
+    /* h1:hover {
       color: red;
     }
     a:active {
@@ -59,6 +59,31 @@
     }
     input:focus {
       background-color: orange;
+    } */
+    /* 찐4번 */
+    /* .stripes *:nth-child(2n) {
+      background-color: yellow;
+    }
+    .stripes *:nth-child(2n + 1) {
+      background-color: navy;
+      color: white;
+    } */
+    /* 5번 */
+    /* .box::before {
+      content: "택시";
+    }
+    .box::after {
+      content: "빨리";
+    } */
+    /* 6번 */
+    [disabled] {
+      background-color: red;
+    }
+    [placeholder="이름"] {
+      background-color: orange;
+    }
+    input:not([placeholder]) {
+      background-color: blue;
     }
   </style>
 
@@ -105,5 +130,28 @@
     <h1>h1태그</h1>
     <a href="https://naver.com">네이버</a>
     <input type="text" />
+
+    <!-- 4번 -->
+    <div class="stripes">
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+    </div>
+    <!-- 5번 -->
+    <div class="box">여기요!</div>
+    <!-- 6번 -->
+    <input type="text" placeholder="이름" />
+    <input type="password" value="pw" />
+    <input type="text" value="000-0000-0000" />
+    <input type="text" placeholder="핸드폰" />
+    <input type="text" placeholder="주민번호" disabled />
+    </div>
   </body>
 </html>
