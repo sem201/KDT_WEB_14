@@ -27,3 +27,77 @@
 .noon {
   font-family: "Tenada";
 }
+
+button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+  ::focus {
+    cursor: pointer;
+  }
+}
+
+/* box sizing */
+.container {
+  display: flex;
+}
+
+.box2 {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: lightblue;
+}
+.content-box {
+  box-sizing: content-box;
+}
+.border-box {
+  box-sizing: border-box;
+}
+
+/* 
+장단점
+content-box
+장점 - 콘텐츠의 유연성 ; 지정된 크기에 따라 동적으로 조정되므로, 디자인의 유연성이 높다.
+    - 디자인 제어 : 패딩, 테두리를 분리하여 디자인 요소를 더 정교하게 제어 가능
+단점 - 레이아웃 복잡성 : ㅠㅐ딩, 테두리 등을 다 각각 계산해야 하므로 시간과 노력이 소요
+border-box
+장점 - 예측 가능성 : 총 너비와 높이를 예측하기 쉽다.
+    - 유지 보수, 간편한 계산
+단점 - 내용 공간 감소 : 실제 콘텐츠 영역이 작아짐
+*/
+
+/* visibility */
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.d-none {
+  display: none;
+  background-color: red;
+}
+.invisible {
+  visibility: hidden;
+  background-color: orangered;
+  /* 모습과 속성을 숨긴다 */
+}
+.opacity-0 {
+  opacity: 0;
+  background-color: tomato;
+  /* 모습만 숨기고 속성은 남는다 */
+}
+.opacity-0:hover {
+  opacity: 1;
+}
+
+.scroll {
+  overflow: scroll;
+}
+.auto {
+  /* overflow: auto; */
+  overflow: auto;
+}

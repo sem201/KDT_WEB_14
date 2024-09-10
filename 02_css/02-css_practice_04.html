@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* .container {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      position: relative;
+    }
+    div div {
+      width: 100px;
+      height: 100px;
+    }
+    div div:nth-child(2) {
+      background-color: orange;
+      position: relative;
+      left: 50px;
+      top: 30px;
+    }
+    div div:nth-child(3) {
+      background-color: yellow;
+      position: absolute;
+      right: 30px;
+      bottom: 100px;
+    }
+    div div:nth-child(4) {
+      background-color: green;
+      position: fixed;
+      right: 100px;
+      top: 100px;
+    } */
+    .container{
+      width: 500px;
+      height: 500px;
+      border:1px solid black;
+      position: relative;
+    }
+    .item{
+      width:100px;
+      height: 100px;
+    }
+    .item1{
+      position: absolute;
+      background-color: red;
+      top:0;
+      z-index: 2;
+    }
+    .item2{
+      position: absolute;
+      top:30px;
+      left: 30px;
+      background-color: orange;
+      z-index: 1;
+    }
+    .item3{
+      position: absolute;
+      top:60px;
+      left: 60px;
+      background-color: green;
+      z-index: 3;
+    }
+    
+    .container2{
+      width:500px;
+      height: 500px;
+      position: relative;
+    }
+    .circle{
+      position: absolute;
+      border-radius: 50%;
+      width:120px;
+      height: 120px;
+    }
+    .circle:nth-child(2){
+      top:20px;
+      left: 30px;
+    }
+    .circle:nth-child(3){
+      top:27px;
+      left: 30px;
+    }
+    .circle:nth-child(4){
+      top:50px;
+      left: 90px;
+    }
+    .circle:nth-child(5){
+      top:100px;
+      left: 140px;
+    }
+    .circle:nth-child(6){
+      top:95px;
+      left: 200px;
+    }
+    .circle:nth-child(7){
+      top:90px;
+      left: 280px;
+      z-index: 4;
+    }
+    img{
+      position: absolute;
+      width:300px;
+    }
+    .zandi:nth-child(8){
+      top:80px;
+    }
+    .zandi:nth-child(9){
+      top:100px;
+      left: 100px;
+      z-index: 3;
+    }
+  </style>
+  <body>
+    <!-- <div class="container">
+      <div style="background-color: red"></div>
+      <div>item1</div>
+      <div>item2</div>
+      <div>item3</div>
+    </div> -->
+    <div class="container"></div>
+      <div class="item item1">item1</div>
+      <div class="item item2">item2</div>
+      <div class="item item3">item3</div>
+    </div>
+    <div class="container2">
+      <div class="circle" style="background-color: rgb(85, 189, 223);"></div>
+      <div class="circle" style="background-color: white; width:45px; height: 45px;"></div>
+      <div class="circle" style="background-color: black; width:25px; height: 25px;"></div>
+      <div class="circle" style="background-color: rgb(83, 83, 236)"></div>
+      <div class="circle" style="background-color: rgb(34, 34, 245)"></div>
+      <div class="circle" style="background-color: rgb(52, 52, 141)"></div>
+      <div class="circle" style="background-color: rgb(16, 16, 53)"></div>
+      <img class='zandi' src="../pngegg.png" alt="잔디">
+      <img class='zandi' src="../pngegg.png" alt="잔디">
+    </div>
+  </body>
+</html>
