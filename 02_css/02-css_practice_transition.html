@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transtiion_practive</title>
+  </head>
+  <style>
+    .box {
+      background-color: black;
+      color: white;
+      width: 100px;
+      height: 100px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      /* transition-property: width, height;
+      transition-duration: 1s;
+      transition-delay: 0.5s;
+      transition-timing-function: ease; */
+
+      transition: width 1s ease 0.5s, height 1s ease 0.5s;
+    }
+    .box:hover {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <div class="box">
+      안녕하세요! 코딩온 실습을 시작합니다. 이번 실습은 transition 입니다. Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Odit ea atque eos quo
+      illo fuga. Voluptatum eos sint tenetur iusto sit dolorem natus nam
+      dolorum, recusandae error, accusantium adipisci quia.
+    </div>
+  </body>
+</html>

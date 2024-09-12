@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea id="d"></textarea>
+    <button id="b">sumbit</button>
+    <script>
+      // textarea 요소 가져오기
+      const t = document.getElementById("d");
+      const bu = document.getElementById("b");
+      console.log(t.onFocus());
+      bu.addEventListener("onclick", function () {
+        t.value = "";
+        t.onFocus();
+      });
+    </script>
+  </body>
+</html>

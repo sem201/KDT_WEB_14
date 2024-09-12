@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-practice</title>
+  </head>
+  <style>
+    /* justyfy-content ; 주축의 정렬 방법
+    - flex-start:default
+    align-items : 교차축의 한줄 정렬 방법
+    - stretch : default
+     */
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: bisque;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      /* align-content: center; */
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+      background-color: blueviolet;
+    }
+    .container2 {
+      width: 100px;
+      height: 1000px;
+      position: relative;
+      margin-top: 200px;
+    }
+    img {
+      width: 700px;
+      height: 500px;
+      transform: rotateY(30deg) skewY(13deg);
+    }
+    #img1 {
+      position: absolute;
+      z-index: 2;
+    }
+    #img2 {
+      position: absolute;
+      left: 370px;
+      top: -50px;
+      z-index: 1;
+    }
+    #img3 {
+      position: absolute;
+      left: 740px;
+      top: -100px;
+      z-index: 0;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">item5</div>
+      <div class="item">item6</div>
+      <div class="item">item7</div>
+      <div class="item">item8</div>
+    </div>
+    <hr />
+    <div class="container2">
+      <div>
+        <img
+          id="img1"
+          src="https://gongu.copyright.or.kr/gongu/wrt/cmmn/wrtFileImageView.do?wrtSn=13262118&filePath=L2Rpc2sxL25ld2RhdGEvMjAyMC8yMS9DTFMxMDAwNi82MmZhMWExMy03ZjRmLTQ1NWMtYTZlNy02ZTk2YjhjMjBkYTk=&thumbAt=Y&thumbSe=b_tbumb&wrtTy=10006"
+          alt="dd"
+        />
+      </div>
+      <div>
+        <img
+          id="img2"
+          src="https://gongu.copyright.or.kr/gongu/wrt/cmmn/wrtFileImageView.do?wrtSn=13262118&filePath=L2Rpc2sxL25ld2RhdGEvMjAyMC8yMS9DTFMxMDAwNi82MmZhMWExMy03ZjRmLTQ1NWMtYTZlNy02ZTk2YjhjMjBkYTk=&thumbAt=Y&thumbSe=b_tbumb&wrtTy=10006"
+          alt="dd"
+        />
+      </div>
+      <div>
+        <img
+          id="img3"
+          src="https://gongu.copyright.or.kr/gongu/wrt/cmmn/wrtFileImageView.do?wrtSn=13262118&filePath=L2Rpc2sxL25ld2RhdGEvMjAyMC8yMS9DTFMxMDAwNi82MmZhMWExMy03ZjRmLTQ1NWMtYTZlNy02ZTk2YjhjMjBkYTk=&thumbAt=Y&thumbSe=b_tbumb&wrtTy=10006"
+          alt="dd"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        position: relative;
+        /* animation: name duration timing-function(생략o) delay(생략O) iteration-count direction(생략 o) fill-mode(생략 o); */
+        animation-name: myani;
+        animation-duration: 2s;
+        animation-iteration-count: 3;
+        animation-timing-function: ease;
+        animation-delay: 1s;
+      }
+      /* @keyframes 이름 {
+        0%{
+
+        }
+        50%{
+
+        }
+        100%{
+
+        }
+      } */
+      @keyframes myani {
+        0% {
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          left: 100px;
+          top: 100px;
+        }
+        50% {
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          left: 100px;
+          top: 300px;
+        }
+        100% {
+          left: 0px;
+          top: 400px;
+        }
+      }
+      /* .circle {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border-radius: 50%;
+        animation-name: rec;
+        animation-duration: 3s;
+        animation-timing-function: ease;
+        animation-delay: 1s;
+        animation-iteration-count: 6;
+      } */
+      @keyframes rec {
+        0% {
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          left: 0px;
+          top: 0px;
+        }
+      }
+      p {
+        animation: wnfmfm 3s;
+        font-size: 30px;
+      }
+      @keyframes wnfmfm {
+        0% {
+          margin-left: 100%;
+          width: 300%;
+        }
+        100% {
+          margin-left: 0%;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div></div> -->
+    <!-- <div class="circle"></div> -->
+    <p class="container">
+      As I relax on the sofa and gaze around a room a thought hits me: this is
+      exactly the place I’ve been looking for all my life. A little hideaway in
+      some sinkhole somewhere. I’d always thought of it as a secret, imaginary
+      place, and can barely believe that it actually exists. I close my eyes and
+      take a breath, and wonder of it all settles over me like a gentle cloud.
+    </p>
+  </body>
+</html>

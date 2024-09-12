@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+
+        /* transition: 속성명(transition-property) 지속시간(-단축으로 쓸 때 필수 , transition-duration) 
+          타이밍함수 (transition-timing-function) 대기시간(transition-delay);
+        */
+        /* transition: width 2s ease 1s; */
+        transition-property: width, height;
+        transition-duration: 2s;
+        transition-timing-function: ease;
+        /* transition-delay: 1s; */
+      }
+      .box:hover {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
