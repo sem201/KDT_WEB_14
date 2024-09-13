@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/837ff3adc1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* :root -> html 의 요소를 의미, <html>태그 선택 보다 우선 순위가 높다. */
+      /* 전역변수를 만들 때 많이 사용 */
+      /* --ㅇㅇ~~ : 변수 선언 한거임  */
+      :root {
+        --nav-height-lg: 100px;
+        --nav-height-sm: 60px;
+      }
+
+      body {
+        margin: 0;
+        /* 헤더가 fixed 인지 확인하기 위해 */
+        height: 2000px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /* HEADER */
+      header {
+        width: 100%;
+        /* 변수 사용 시 var() */
+        height: var(--nav-height-lg);
+        z-index: 100;
+        position: fixed;
+      }
+
+      /* 768px 보다 클때의 header */
+      header .inner {
+        background-color: lightblue;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* LOGO */
+      header .inner .logo {
+        color: white;
+        font-size: 30px;
+
+        position: absolute;
+        left: 200px;
+      }
+
+      header .inner .menu {
+        display: flex;
+        flex-direction: row;
+      }
+
+      header .inner .menu li {
+        margin: 0 10px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      /* 미디어 쿼리 작성 768px 이하일 때  */
+      @media screen and (max-width: 768px) {
+        header .inner .logo {
+          position: absolute;
+          left: calc((100% - 33.75px) / 2);
+        }
+        header .inner .menu {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          background-color: rgb(221, 238, 244);
+          position: absolute;
+          top: var(--nav-height-lg);
+          /* margin-top: var(--nav-height-lg); */
+        }
+
+        header .inner .menu li {
+          margin: 10px 0;
+          font-weight: 400;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <div class="logo">
+          <i class="fa-solid fa-igloo"></i>
+        </div>
+        <ul class="menu">
+          <li>메뉴1</li>
+          <li>메뉴2</li>
+          <li>메뉴3</li>
+          <li>메뉴4</li>
+        </ul>
+      </div>
+    </header>
+  </body>
+</html>
