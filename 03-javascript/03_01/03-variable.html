@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수</title>
+    <script>
+      //변수 선언 & 할당
+      // var 키워드
+      /*
+      - 중복 선언, 재할당 모두 가능
+      - 할당 x -> undefined
+      */
+      var name = "홍길동";
+      var name = "홍길동2"; // 중복 선언 O
+      name = "나비"; // 재할당 O
+      var name2; // 선언, 할당x -> undefined 로 할당됨
+      console.log(name);
+      console.log(name2);
+
+      // let 키워드
+      /*
+      - 중복 선언 X, 재할당은 가능
+      - 할당 x -> undefined
+      */
+      let age = 20;
+      age = 30; // 재할당 가능
+
+      // const 키워드
+      /*
+      - 중복 선언 X , 재할당 x
+      - 처음 선언 시 초기화 필수! (선언과 할당을 동시에 해야함)
+      */
+
+      const grade = 0;
+    </script>
+  </head>
+  <body></body>
+</html>
