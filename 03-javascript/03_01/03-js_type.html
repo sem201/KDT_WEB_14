@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 자료형
+      // -기본
+      // -string: 문자열
+      // -number: 숫자열
+      // -boolean: 참 거짓
+      // - null : 아무것도 없는
+      // - undefined : 정의되지 않은
+      // - 객체
+      // - array(배열) : 데이터를 순차적으로 저장
+      // - object(객체) : key- value 형태로 이루어진 데이터
+
+      // 1.string
+      let myName = "길동";
+      let email = "gildong@naver.com";
+      let city = "'서울'";
+      console.log(myName);
+      console.log(email);
+      console.log(city);
+
+      // 문자와 변수를 동시에 출력
+      console.log("내 이름은", myName, "이고 이메일은", email, "입니다.");
+      console.log("내 이름은 " + myName + "이고 이메일은 " + email + "입니다.");
+      let gildong = `내 이름은 ${myName}이고 이메일은 ${email}입니다.`;
+      console.log(gildong);
+
+      // 2. number
+      let number = 123;
+      let opacity = 0.7;
+      console.log(number);
+      console.log(opacity);
+
+      // NaN : not a numver
+      console.log("apple" - 3);
+
+      //3. boolean
+      let checked = true;
+      let unchecked = false;
+      console.log(checked);
+      console.log(unchecked);
+
+      // 4. undefined
+      let undef;
+      console.log(undef);
+      // 5.null
+      let empty = null;
+      console.log(empty);
+
+      //6. array
+      let fruits = ["orange", "pineapple", "grape", "apple"];
+      let fruits2 = new Array("orange", "pineapple", "grape", "apple");
+
+      console.log(fruits);
+      console.log(fruits[0], fruits[4]);
+
+      let data1 = [1, "gildong", false, null, undefined];
+      console.log(data1);
+
+      //배열 속성, 함수
+      console.log("length", fruits.length); // 길이
+      fruits.push("melon");
+      console.log(fruits);
+
+      let arr = ["red", "orange", "yellow", "green", "blue", "black", "purple"];
+      console.log(arr[2]);
+      console.log(arr.push("white"));
+      console.log(arr);
+      console.log(arr.indexOf("black"));
+      console.log(arr.reverse());
+
+      // 7.object
+      let cat = {
+        name: "나비",
+        age: 1,
+        isCute: true,
+        mew: function () {
+          console.log("냐옹~ 콘솔");
+          return "냐옹 반환"; // 반환값
+        },
+      };
+
+      console.log(cat);
+      // 점 표기법
+      // 객체 이름.key -> 반환값 : value
+      console.log(cat.name);
+      console.log(cat.mew());
+
+      // 대괄호 표기법
+      // 객체이름['key이름'] -> 반환값 = value
+      // 깊은 복사, 얕은 복사 ??
+      console.log(cat["name"]);
+
+      // typeof 사용
+      let und = undefined;
+      console.log(typeof "문자");
+      console.log(typeof 123);
+      console.log(typeof true);
+      console.log(typeof cat); //object
+      console.log(typeof fruits); //object
+      console.log(typeof NaN); //number
+      console.log(typeof null); //object
+      console.log(typeof und);
+      console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+      // 형변환
+      // let mathScore = prompt("수학 점수 입력");
+      // let engilishScore = prompt("영어 점수 입력");
+      // let avg = (mathScore + engilishScore) / 2;
+      // console.log(avg);
+
+      //문자 형변환
+      // String(변환할값) , 변환할값.toString()
+      let str1 = true;
+      let strt2 = 123;
+      let str3 = null;
+      console.log(String(str1));
+      console.log(typeof String(str1));
+      console.log(typeof str1); // boolean 기존의 값이 변환되진 않음 String으로 인해서
+      console.log(str1.toString());
+      console.log(typeof str1.toString());
+      console.log(str1);
+      console.log(String(str3));
+      // consoel.log(toString.str3);
+
+      //숫자 형변환
+      //Number(변환할 값)
+      let n1 = true;
+      let n2 = false;
+      let n3 = "123.9";
+
+      console.log(Number(n1)); // 1
+      console.log(Number(n2)); // 0
+      console.log(Number(n3)); // 123.9
+
+      let me = {
+        name: "성재",
+        age: 24,
+        mbti: "ISFP",
+        coding: function () {
+          console.log("잘하고 싶다");
+          return "something";
+        },
+      };
+      console.log(me.name);
+      console.log(me["age"]);
+      console.log(me.mbti);
+      console.log(me.coding()); // 함수 반환 값이 없으면 undefined가 나온다..!
+
+      let mathScore = "77";
+      let engScore = "88";
+      let avgScore = (Number(mathScore) + Number(engScore)) / 2;
+      console.log(avgScore);
+      console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+
+      let result1, result2;
+      let num1 = 10;
+      let num2 = 10;
+
+      result1 = num1++;
+      console.log("result1", result1);
+      console.log("num1", num1);
+      result2 = ++num2;
+      console.log("result2", result2);
+      console.log("num2", num2);
+      const array = [
+        [1, 2, 3],
+        [4, 5, 6],
+      ];
+      const arrcopy = [...array];
+      console.log("array:", array);
+      console.log("copy: ", arrcopy);
+      arrcopy.push([7, 8, 9]);
+      console.log("array pop:", array);
+      console.log("copy pop: ", arrcopy);
+
+      console.log(`${typeof 123} isn't ${typeof "문자"} data type`);
+      console.log(
+        `Typeof를 array 나 boolean에 사용하면, ${typeof []} 결과를 얻을 수 있습니다.`
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

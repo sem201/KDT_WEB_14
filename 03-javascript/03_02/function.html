@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+    <script>
+      // function 함수이름(input -> 매개변수, 인자, 파라미터 라고 부름){
+      // 함수영역, 스코프 라고도 부름
+      // 함수에서 실행할 코드 작성
+      // }
+
+      function sayHello() {
+        console.log("hello");
+      }
+      let sayHello2 = function () {
+        console.log("Hello2");
+      };
+
+      let sayHello3 = () => {
+        console.log("Hello3");
+      };
+      // 함수 안에서만 유용하다.
+      function hello(name) {
+        console.log(`안녕 느는 ${name}`);
+
+        let age = 10;
+        return age;
+      }
+      hello("ㅎㅇ");
+      let age = hello("길동");
+      console.log(age);
+    </script>
+  </head>
+  <body></body>
+</html>
