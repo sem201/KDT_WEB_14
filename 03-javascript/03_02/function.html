@@ -9,7 +9,7 @@
       // 함수영역, 스코프 라고도 부름
       // 함수에서 실행할 코드 작성
       // }
-
+      let grade = 1; // 전역변수
       function sayHello() {
         console.log("hello");
       }
@@ -21,15 +21,23 @@
         console.log("Hello3");
       };
       // 함수 안에서만 유용하다.
-      function hello(name) {
-        console.log(`안녕 느는 ${name}`);
+      function hello(name, grade) {
+        console.log(`안녕 나는 ${name}`);
 
-        let age = 10;
-        return age;
+        let age = 10; // 함수 hello 안에다가 선언한 변수 age
+        console.log("hello 함수 안에서 age 출력: ", age);
+        console.log(grade);
+
+        //let name = 5; // error: 매개변수에서 사용한 이름
+        console.log("함수 안 grade: ", grade); // 매개 변수로 선언한 값이 출력
+        return age; // age 값 반환, 함수가 끝남.
+        console.log("안녕"); // return 뒤에 코드가 있더라도, 실행이 안된다.
       }
-      hello("ㅎㅇ");
-      let age = hello("길동");
+      hello("성재", 5);
+      // console.log(age); // error 가 난다.
+      let age = hello("길동", 5); // 함수 호출 한 곳에서 age 값 반환, let 은 재선언이 불가능하지만, 이 경우 이전에는 함수 내에서 선언했고 이번에는 밖에서 선언했기 떄문에 상관 x
       console.log(age);
+      console.log("함수 밖 grade:", grade);
     </script>
   </head>
   <body></body>

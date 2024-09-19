@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //1번
+      // let numEnd = Number(prompt("숫자를 입력해주세요"));
+      // let num = 0;
+      // for (num; num <= numEnd; num++) {
+      //   if (num % 13 == 0 && num % 2 == 1) {
+      //     console.log(num);
+      //   }
+      // }
+
+      //2번
+      // for (let i = 2; i < 10; i++) {
+      //   console.log(`---------${i}단---------`);
+      //   for (let t = 1; t < 10; t++) {
+      //     console.log(`${i} x ${t} = ${i * t}`);
+      //   }
+      // }
+
+      //3번
+      let total = 0;
+      for (let i = 0; i < 101; i++) {
+        if (i % 2 == 0 || i % 5 == 0) {
+          total += i;
+        }
+      }
+      console.log(total);
+    </script>
+  </head>
+  <body></body>
+</html>
