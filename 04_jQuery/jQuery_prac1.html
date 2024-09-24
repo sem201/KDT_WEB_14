@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 실습1</title>
+    <!-- jQueru CDN 불러오기 -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function changeImg(name) {
+        $("img").attr("src", `./img/img/${name}.png`);
+        $("img").css("display", "block");
+        $("div").css("display", "none");
+      }
+    </script>
+  </head>
+  <style>
+    div {
+      width: 230px;
+      height: 200px;
+      border: 3px solid green;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      text-align: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <!-- 필요하다면 이미지 경로 변경 -->
+    <img
+      src="./img/"
+      alt="과일"
+      width="230px"
+      height="200px"
+      style="display: none"
+    />
+    <div>과일 이름을 눌러서 이미지를 변경해주세요🍒</div>
+    <br />
+    <button onclick="changeImg('apple')">사과</button>
+    <button onclick="changeImg('banana')">바나나</button>
+    <button onclick="changeImg('grape')">포도</button>
+    <button onclick="changeImg('peach')">복숭아</button>
+  </body>
+</html>
