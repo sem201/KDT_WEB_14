@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열메서드</title>
+    <script>
+      //문자열 관련 메서드
+      let str = " Happy day~! ";
+      // 1. 문자열 길이를 반환
+      console.log("length : ", str.length); // 13 (공백 포함)
+
+      // 2. (영어) 문자열을 모두 소문자/대문자로 바꾸기
+      console.log("upper case: ", str.toUpperCase());
+      console.log("lower case : ", str.toLowerCase());
+
+      // 3. index를 가져오기
+      console.log("index : ", str.indexOf("y")); // n 번쨰 index에 있는 것 가져옴 (중복시 앞에 있는거 하나만 가져옴)
+      console.log("last index : ", str.lastIndexOf("y")); // indexOf와 동일하게 작동하지만 뒤에서 부터 찾는다.
+      console.log("no index : ", str.indexOf("e")); // 존재하지 않는 값을 찾으려고 하면 -1이 출력된다.
+
+      // 4. 문자열 자르기
+      console.log("slice : ", str.slice(2)); // index 2부터 끝까지 slice
+      console.log("slice : ", str.slice(2.6)); // index 2부터 5까지 slice
+
+      // 5. 문자열 바꾸기
+      // replace : 제일 먼저 찾아지는 한 친구만 바꿈
+      console.log("replace p-> a: ", str.replace("p", "a"));
+      console.log("replace all p -> a :", str.replaceAll("p", "a"));
+
+      // 6. 반복
+      console.log("repeat : ", str.repeat(5));
+
+      // 7. split : 매게변수로 들어온 문자열을 기준으로 str을 쪼개서 배열로 저장
+      // 기준이 됐던 값은 없어짐
+      console.log("split : ", str.split("a"));
+      console.log("split : ", str.split(""));
+      console.log("split : ", str.split(" "));
+
+      // 8. trim : 좌우 공백 제거
+      console.log("trim 전:", str.length);
+      console.log("trim 후:", str.trim().length); // 메소드 체이닝 연관 나중에 배울거임 ㅇㅇ
+    </script>
+  </head>
+  <body></body>
+</html>

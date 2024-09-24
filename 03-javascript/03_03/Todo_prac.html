@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .done {
+      background-color: yellow;
+    }
+    .todo {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+  <body>
+    <h2>TODO List</h2>
+    <ul>
+      <li class="done">점심먹기</li>
+      <li class="done">커피 마시기</li>
+      <li class="todo">과제 완성하기</li>
+      <li class="todo">운동하기</li>
+      <li class="todo">저녁먹기</li>
+    </ul>
+    <script>
+      let liList = document.querySelectorAll("li");
+      for (let i = 0; i < liList.length; i++) {
+        liList[i].classList.toggle("todo");
+        liList[i].classList.toggle("done");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let arrs = [];
+      for (let i = 1; i < 101; i++) {
+        arrs.push(i);
+      }
+      console.log(arrs);
+      // 1번 for 합
+      let sum1 = 0;
+      for (let i = 0; i < 100; i++) {
+        sum1 += arrs[i];
+      }
+      console.log(sum1);
+
+      //2번 For of 합
+      let sum2 = 0;
+      for (let arr of arrs) {
+        sum2 += arr;
+      }
+      console.log(sum2);
+
+      //3번 for each 합
+      let sum3 = 0;
+      arrs.forEach((arr) => {
+        sum3 += arr;
+      });
+      console.log(sum3);
+
+      // 내장 메소드 실습
+      let fruits1 = [
+        "사과",
+        "딸기",
+        "파인애플",
+        "수박",
+        "참외",
+        "오렌지",
+        "자두",
+        "망고",
+      ];
+      let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+
+      let same = [];
+      for (let fruit of fruits1) {
+        for (let fruit2 of fruits2) {
+          if (fruit == fruit2) {
+            same.push(fruit);
+          }
+        }
+      }
+      console.log(same);
+
+      same = [];
+      same = fruits1.filter((fruit) => {
+        fruits2.includes(fruit);
+      });
+
+      let diff = [];
+      diff = fruits1.filter((fruit) => !fruits2.includes(fruit));
+
+      console.log(diff);
+
+      let n = [1, 2, 3, 4, 6, 7, 8, 0];
+      let subak = (n) => {
+        let sum = 0;
+        console.log("들어온숫자", n);
+        for (let i = 0; i < 10; i++) {
+          console.log("i", i);
+          if (!n.includes(i)) {
+            sum += i;
+          }
+        }
+        return sum;
+      };
+      console.log(subak(n));
+    </script>
+  </head>
+  <body></body>
+</html>
