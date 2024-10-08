@@ -3,19 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>예시</title>
   </head>
+  <style>
+    div {
+      border: 1px solid black;
+      margin: 5px;
+    }
+  </style>
   <body>
-    <textarea id="d"></textarea>
-    <button id="b">sumbit</button>
+    <button class="btn">
+      button 태그
+      <div>button 태그의 1번째 자식 div</div>
+      <div>button 태그의 2번째 자식 div</div>
+    </button>
+
     <script>
-      // textarea 요소 가져오기
-      const t = document.getElementById("d");
-      const bu = document.getElementById("b");
-      console.log(t.onFocus());
-      bu.addEventListener("onclick", function () {
-        t.value = "";
-        t.onFocus();
+      let btn = document.querySelector(".btn");
+      let btn2 = document.querySelector(".btn2");
+      btn.addEventListener("click", function (e) {
+        console.log("1번째 버튼 e :", e.target);
+        console.log("1번째 버튼 this", this);
+      });
+
+      btn2.addEventListener("click", (e) => {
+        console.log("2번째 버튼 e :", e.target);
+        console.log("2번째 버튼 this", this);
+        console.log("2번째 버튼 e.current", e.currentTarget);
       });
     </script>
   </body>

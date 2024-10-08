@@ -1,4 +1,4 @@
-<html></html>
+<html>
   <head>
     <meta charset="UTF-8" />
     <script
@@ -109,20 +109,22 @@
 
     <script>
       let target;
-      $("td>p").click(function(e){
-        console.log("e.target",e.target)
-        $("#date").val(e.target.textContent)
-        target=e.target;
-      })
+      $("td>p").click(function (e) {
+        // JS
+        console.log("e.target", e.target);
+        $("#date").val(e.target.textContent); // e.target이 P 태그 선택 -> p 태그의 textContent 혹은 innerText를 이용해서 p태그 내부의 텍스트 값을 가져올 수 있음.
+        target = e.target;
+      });
 
-      $("td").on("click",function(){
-        console.log("this",this);
-        console.log($(this).text());
-      })
+      //jQuery
+      $("td").on("click", function () {
+        console.log("this", this);
+        console.log($(this).text()); // this를 이용해서 td태그 선택(선택자가 td임으로) -> $(this)를 이용해서 jQuery 메소드인 .text를 이용해 위와 동일하게 텍스트 값을 가져올 수 있음.
+      });
       function writeSchedule() {
-        target.after($("#content").val())
-        $("#date").val("")
-        $("#content").val("")
+        target.after($("#content").val());
+        $("#date").val("");
+        $("#content").val("");
       }
     </script>
   </body>
