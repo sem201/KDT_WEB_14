@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form result</title>
+  </head>
+  <body>
+    <h1><%=title%>Form 결과 확인하기</h1>
+    <div><span><%= userInfo.id%>님 환영합니다!</span></div>
+    <div>비밀번호는 <span><%= userInfo.pw%></span></div>
+    <% if(userInfo.email){%>
+    <div>이메일은 <span><%= userInfo.email%></span></div>
+    <%}%> <%if(userInfo.grade){%>
+    <div><span><%=userInfo.grade%></span>학년이군요!</div>
+    <%}%>
+  </body>
+</html>
