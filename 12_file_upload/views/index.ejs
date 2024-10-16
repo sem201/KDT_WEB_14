@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일 업로드</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <body>
+    <h1>파일 업로드</h1>
+    <h2>single file upload</h2>
+    <p>하나의 인풋에 하나의 파일을 업로드</p>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfile" />
+      <input type="text" name="title" /><br /><br />
+      <button>업로드</button>
+    </form>
+
+    <h2>multiple file upload v1</h2>
+    <p>하나의 인풋에 여러개의 파일을 업로드</p>
+    <form action="/upload/array" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfiles" multiple />
+      <input type="text" name="title" /><br /><br />
+      <button>업로드</button>
+    </form>
+
+    <h2>multiple file upload v2</h2>
+    <p>여러의 인풋에 각각의 파일을 업로드</p>
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfile1" />
+      <input type="file" name="userfile2" />
+      <input type="text" name="title" /><br /><br />
+      <button>업로드</button>
+    </form>
+
+    <h2>동적 파일 업로드</h2>
+    <input type="file" name="dynamicUserFiel" id="dynamic-file" /><br />
+    <button onclick="fileUpload()">업로드</button>
+    <br />
+    <!-- 업로드한 이미지를 보여쭐 img 태그 요소 -->
+    <img src="" alt="" />
+    <br />
+
+    <!-- 연습문제 1 form 이용하여 업로드 -->
+    <form action="/upload/prac" method="post" enctype="multipart/form-data">
+      <input type="text" name="id" placeholder="아이디" />
+      <input type="password" name="pw" id="pw" placeholder="비밀번호" />
+      <input type="text" name="name" placeholder="이름" />
+      <input type="text" name="age" placeholder="나이" />
+      <input type="file" name="userfile" /><br /><br />
+      <button>업로드</button>
+    </form>
+
+    <!-- 연습문제 2 axios 를 이용하여 업로드 -->
+    <form enctype="multipart/form-data" name="register">
+      <input type="text" name="id" placeholder="아이디" />
+      <input type="password" name="pw" id="pw2" placeholder="비밀번호" />
+      <input type="text" name="name" placeholder="이름" />
+      <input type="text" name="age" placeholder="나이" />
+      <input type="file" name="userfile" id="uploadedFile" /><br /><br />
+      <button type="button" onclick="axiosUpload()">업로드</button>
+      <img src="" alt="" id="img" />
+    </form>
+    <script>
+      function fileUpload() {
+        // 동적 파일 업로드
+        // js 만으로 폼을 전송
+        // 파일 데이터를 전송할 떄 FromData 객체를 활용
+        // form 태그의 데이터를 동적으로 제어 할 수 있는 기능
+        const formData = new FormData();
+        const file = document.querySelector("#dynamic-file");
+        console.log(file);
+        console.log(file.files[0]); //업로드한 첫 파일
+        formData.append("dynamicUserFile", file.files[0]);
+
+        axios({
+          method: "post",
+          url: "/dynamicFile",
+          data: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }).then((res) => {
+          const { data } = res;
+          console.log("res", res);
+          console.log("data", data);
+
+          const img = document.querySelector("img");
+          img.src = "/" + data.path;
+        });
+      }
+
+      function axiosUpload() {
+        const formData2 = new FormData();
+        const file = document.querySelector("#uploadedFile");
+        const form = document.forms["register"];
+        const img = document.querySelector("#img");
+        formData2.append("userfile", file.files[0]);
+
+        formData2.append("id", form.id.value);
+        formData2.append("pw", form.pw.value);
+        formData2.append("name", form.name.value);
+        formData2.append("age", form.age.value);
+
+        axios({
+          method: "post",
+          url: "upload/prac2",
+          data: formData2,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }).then((res) => {
+          console.log(res);
+          img.src = "/" + res.data.url;
+        });
+      }
+    </script>
+  </body>
+</html>

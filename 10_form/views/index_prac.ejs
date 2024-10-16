@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/prac1">
+      <p>이름</p>
+      <input type="text" />
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="sex" value="남자" />남자
+        <input type="radio" name="sex" value="여자" />여자
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="year">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+        </select>
+        <span>년</span>
+        <select name="month" id="month">
+          <%for(i=1;i<13;i++){%>
+          <option value="<%=i%>"><%=i%></option>
+          <%}%>
+        </select>
+        <span>월</span>
+
+        <select name="day" id="day">
+          <%for(i=1;i<31;i++){%>
+          <option value="<%=i%>"><%=i%></option>
+          <%}%>
+        </select>
+        <span>일</span>
+      </fieldset>
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="favorite" value="travel" /> 여행
+        <input type="checkbox" name="favorite" value="fashion" /> 패션
+        <input type="checkbox" name="favorite" value="food" /> 음식
+      </fieldset>
+      <button>회원가입</button>
+    </form>
+    <hr />
+    <br />
+    <form action="/prac2" method="post" onsubmit="checkForm(this)">
+      <p>이름</p>
+      <input type="text" name="name" required />
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="sex" value="남자" />남자
+        <input type="radio" name="sex" value="여자" />여자
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="year">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+        </select>
+        <span>년</span>
+        <select name="month" id="month">
+          <%for(i=1;i<13;i++){%>
+          <option value="<%=i%>"><%=i%></option>
+          <%}%>
+        </select>
+        <span>월</span>
+
+        <select name="day" id="day">
+          <%for(i=1;i<31;i++){%>
+          <option value="<%=i%>"><%=i%></option>
+          <%}%>
+        </select>
+        <span>일</span>
+      </fieldset>
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="favorite" value="travel" /> 여행
+        <input type="checkbox" name="favorite" value="fashion" /> 패션
+        <input type="checkbox" name="favorite" value="food" /> 음식
+      </fieldset>
+      <fieldset>
+        <legend>선택</legend>
+        <span>좋아하는 색상</span>
+        <input type="color" name="color" value="black" />
+        <span>좋아하는 숫자</span>
+        <input type="number" name="number" />
+      </fieldset>
+      <button>회원가입</button>
+    </form>
+  </body>
+  <script>
+    function checkForm(form) {
+      if (!form.sex[0].checked && !form.sex[1].checked) {
+        alert("성별을 체크해주세요");
+        return false;
+      }
+    }
+  </script>
+</html>

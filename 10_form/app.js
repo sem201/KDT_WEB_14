@@ -18,7 +18,7 @@ app.use(express.json()); // json 형식의 데이터 해석, 주고 받게 해�
 // ex) GET '/' => index.ejs를 보여줌
 app.get("/", (req, res) => {
   console.log(req.query);
-  res.render("index");
+  res.render("index_prac");
 });
 
 //GET '/login'으로 들어오는 거 처리
@@ -38,6 +38,22 @@ app.post("/login", (req, res) => {
   res.render("result", { title: "POST", userInfo: req.body });
 });
 
+app.post("/js-form-check", (req, res) => {
+  console.log(req.body);
+  res.send("js validation 성공");
+});
+
+// app.post("/js-form-check");
+
+app.get("/prac1", (req, res) => {
+  console.log(req.query);
+  res.send(req.query);
+});
+
+app.post("/prac2", (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
+});
 app.listen(PORT, () => {
   console.log(`${PORT}번으로 서버 시작`);
 });

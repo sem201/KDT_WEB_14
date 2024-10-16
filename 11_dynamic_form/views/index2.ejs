@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <body>
+    <form name="register">
+      <p>이름</p>
+      <input type="text" name="name" />
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" value="남자" />남자
+        <input type="radio" name="gender" value="여자" />여자
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="year">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+        </select>
+        <span>년</span>
+        <select name="month" id="month">
+          <%for(i=1;i<13;i++){%>
+          <option value="<%=i%>"><%=i%></option>
+          <%}%>
+        </select>
+        <span>월</span>
+
+        <select name="day" id="day">
+          <%for(i=1;i<31;i++){%>
+          <option value="<%=i%>"><%=i%></option>
+          <%}%>
+        </select>
+        <span>일</span>
+      </fieldset>
+      <input type="checkbox" name="hobby" value="1" />1
+      <input type="checkbox" name="hobby" value="2" />2
+      <input type="checkbox" name="hobby" value="3" />3
+      <button type="button" onclick="signIn()">회원가입</button>
+    </form>
+    <form name="login">
+      <label for="id">ID</label>
+      <input
+        type="text"
+        name="id"
+        id="id"
+        required
+        placeholder="ID"
+        pattern="^([a-zA-Z0-9가-힣]{4,})"
+        title="아이디는 대소문자, 한글, 숫자로 구성된 4글자 이상의 문자여야 합니다."
+      />
+
+      <label for="pw">PW</label>
+      <input
+        type="password"
+        name="pw"
+        id="pw"
+        required
+        placeholder="PW"
+        pattern="([a-z0-9]{1,12})"
+        title="비밀번호는 영어 소문자와 숫자로 구성된 1~12자리 문자여야 합니다."
+      />
+
+      <button type="button" onclick="loginfunc()">로그인</button>
+      <div class="Islogin"></div>
+  </body>
+  <script>
+    const divBox = document.querySelector(".Islogin");
+    async function signIn() {
+      console.log("회원가입");
+      
+      const form = document.forms["register"];
+      const allHobbies = Array.from(form.hobby).map(checkbox => checkbox.value);
+      console.log(allHobbies)
+      const data = {
+        name: form.name.value,
+        gender: form.gender.value,
+        birth: {
+          year: form.year.value,
+          month: form.month.value,
+          day: form.day.value,
+        },
+        dd: allHobbies,
+      };
+      console.log("hobby",data.dd);
+      try {
+        const response = await axios({
+          method: "get",
+          url: "/axios-prac",
+          params: data,
+        });
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function loginfunc(){
+      console.log("로그인");
+      const form = document.forms["login"];
+      const data = {
+        id : form.id.value,
+        pw : form.pw.value,
+      }
+      try{
+      const response = await axios({
+        method:"post",
+        url:"/axios-prac",
+        data:data,
+      });
+      console.log(response.data);
+      if(response.data){
+        divBox.innerHTML="<p style='color:blue'>로그인에 성공하셨습니다</p>"
+      }else{
+        divBox.innerHTML="<p style='color:red'>로그인에 실패하셨습니다<br/> 다시 로그인 해주세요</p>"
+      }
+      }catch(error){
+        console.log(error);
+      }
+    }
+  </script>
+</html>
