@@ -1,5 +1,4 @@
 // models/index를 불러와서 export 한
-const { where } = require("sequelize");
 const models = require("../models/index");
 const Visitor = models.Visitor;
 
