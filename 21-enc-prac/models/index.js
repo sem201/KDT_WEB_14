@@ -1,14 +1,17 @@
-const Sequelize = require('sequelize');
-const config = require(__dirname + '/../config/config.json')['development'];
+const Sequelize = require("sequelize");
+const config = require(__dirname + "/../config/config.js")["development"];
 
 const db = {};
 const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config,
+  config
 );
 
+const User = require("./User")(sequelize, Sequelize.DataTypes);
+
+db.User = User;
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

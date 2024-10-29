@@ -2,18 +2,13 @@
 <html lang="en">
   <%- include('./head') %>
   <body>
-    <h1><%= data.name %>님 프로필 정보</h1>
+    <h1><%= name %>님 프로필 정보</h1>
 
     <form name="edit-profile">
-      <input
-        type="text"
-        id="userid"
-        value="<%= data.userid %>"
-        readonly
-      /><br />
-      <input type="text" id="name" value="<%= data.name %>" /><br />
-      <input type="password" id="pw" value="<%= data.pw %>" /><br />
-      <input type="hidden" id="id" value="<%= data.id %>" /><br />
+      <input type="text" id="userid" value="<%= userid %>" readonly /><br />
+      <input type="text" id="name" value="<%= name %>" /><br />
+      <input type="password" id="pw" value="<%= pw %>" /><br />
+      <input type="hidden" id="id" value="<%= id %>" /><br />
       <button type="button" onclick="edit()">수정</button>
       <button type="button" onclick="destroy()">회원탈퇴</button>
     </form>
@@ -23,10 +18,10 @@
 
     <script>
       function edit() {
-        const form = document.forms['edit-profile'];
+        const form = document.forms["edit-profile"];
         axios({
-          method: 'PATCH',
-          url: '/profile/edit',
+          method: "PATCH",
+          url: "/profile/edit",
           data: {
             id: Number(form.id.value),
             userid: form.userid.value,
@@ -41,18 +36,18 @@
       }
 
       function destroy() {
-        if (!confirm('회원탈퇴 하시겠습니까?')) return;
+        if (!confirm("회원탈퇴 하시겠습니까?")) return;
 
         axios({
-          method: 'DELETE',
-          url: '/destroy',
+          method: "DELETE",
+          url: "/destroy",
           data: {
-            id: Number(document.querySelector('#id').value),
+            id: Number(document.querySelector("#id").value),
           },
         }).then((res) => {
           if (res.data.result) {
-            alert('회원탈퇴 완료되었습니다');
-            document.location.href = '/';
+            alert("회원탈퇴 완료되었습니다");
+            document.location.href = "/";
           }
         });
       }
