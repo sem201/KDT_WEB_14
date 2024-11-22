@@ -1,0 +1,23 @@
+import React, { Component } from "react";
+
+export default class RefClass1 extends Component {
+  handleFocus = () => {
+    // this : RefClass1 컴포넌트
+    console.log(this);
+    this.myInput.focus();
+  };
+  render() {
+    return (
+      <div>
+        <p>(클래스형 컴포넌트) 버튼 클릭 시 input에 focus 처리</p>
+        <input
+          type="text"
+          ref={(ref) => {
+            this.myInput = ref; // myInput이라는 변수를 생성하고 거기에 ref 넣기
+          }}
+        />
+        <button onClick={this.handleFocus}>focus</button>
+      </div>
+    );
+  }
+}
